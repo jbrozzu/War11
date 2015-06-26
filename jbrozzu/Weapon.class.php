@@ -2,12 +2,12 @@
 
 class Weapons
 {
-	private $_nom;
-    private $_charge;
-    private $_courte_portee;
-    private $_moyenne_portee;
-    private $_longue_portee;
-	private $_zone_effet;
+	private $_Name
+    private $_Load;
+    private $_Srange;
+    private $_Mrange;
+    private $_Lrange;
+	private $_Area;
 	public static $verbose = FALSE;
 
 	public function __construct($kwargs)
@@ -25,64 +25,64 @@ class Weapons
 
 	public function init(array $kwarg)
 	{
-		$this->setName($kwarg['nom']);
-		$this->setLoad($kwarg['charge']);
-		$this->setSrange($kwarg['cportee']);
-		$this->setMrange($kwarg['mportee']);
-		$this->setLrange($kwarg['lportee']);
-		$this->setArea($kwarg['zeffet']);
+		$this->setName($kwarg['Name']);
+		$this->setLoad($kwarg['Load']);
+		$this->setSrange($kwarg['Srange']);
+		$this->setMrange($kwarg['Mrange']);
+		$this->setLrange($kwarg['Lrange']);
+		$this->setArea($kwarg['Area']);
 	}
 
 
-	public function setNom($elem)
+	public function setName($elem)
 	{
-		$this->_nom = $elem;
+		$this->_Name = $elem;
 	}
-	public function setCharge($elem)
+	public function setLoad($elem)
 	{
-		$this->_charge = $elem;
+		$this->_Load = $elem;
 	}
-	public function setCportee($elem)
+	public function setSrange($elem)
 	{
-		$this->_courte_portee = $elem;
+		$this->_Srange = $elem;
 	}
-	public function setMportee($elem)
+	public function setMrange($elem)
 	{
-		$this->_moyenne_portee = $elem;
+		$this->_Mrange = $elem;
 	}
-	public function setLportee($elem)
+	public function setLrange($elem)
 	{
-		$this->_longue_portee = $elem;
+		$this->_Lrange = $elem;
 	}
-	public function getZeffet($elem)
+	public function setArea($elem)
 	{
-		$this->_zone_effet = $elem;
+		$this->_Area = $elem;
 	}
 
 
-	public function getNom()
+	public function getName()
 	{
-		return $this->_nom;
+		return $this->_Name;
 	}
-	public function getCharge()
+	public function getLoad()
 	{
-		return $this->_charge;
+		return $this->_Load;
 	}
-	public function getCportee()
+	public function getSrange()
 	{
-		return $this->_courte_portee;
+		return $this->_Srange;
 	}
-	public function getMportee()
+	public function getMrange()
 	{
-		return $this->_moyenne_portee;
+		return $this->_Mrange;
 	}
-	public function getLportee()
+	public function getLrange()
 	{
-		return $this->_longue_portee;
+		return $this->_Lrange;
 	}
-	public function getZeffet()
+	public function getArea()
 	{
-		return $this->_zone_effet;
+		return $this->_Area;
 	}
 
 
@@ -93,7 +93,7 @@ class Weapons
 	}
 }
 /*
-	$Gun_1 = new Gun(array('nom' => 'Macro canon', 'charge' => 0, 'cportee' => 10, 'mportee' => 20, 'lportee' => 30, 'zeffet' => 3));
-	$Gun_2 = new Gun(array('nom' => 'Lance navale', 'charge' => 3, 'cportee' => 30, 'mportee' => 60, 'lportee' => 90, 'zeffet' => 1));
+	$Gun_1 = new Gun(array('Name' => 'Macro canon', 'Load' => 0, 'Srange' => 10, 'Mrange' => 20, 'Lrange' => 30, 'Area' => 3));
+	$Gun_2 = new Gun(array('nom' => 'Lance navale', 'Load' => 3, 'Srange' => 30, 'Mrange' => 60, 'Lrange' => 90, 'Area' => 1));
 */
 ?>

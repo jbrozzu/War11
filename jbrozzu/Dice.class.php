@@ -3,7 +3,7 @@
 	class dice 
 	{
 
-		private $nbDice;
+		private $_NbDice;
 
 		 public function __construct($val)
 		 {
@@ -21,6 +21,21 @@
 				$this_nbDice--;
 			}
 			return ($final_ret);
+		}
+
+		public function setNbDice($elem)
+		{
+			$this->_NbDice = $elem;
+		}
+
+		public function getNbDice()
+		{
+			return $this->_NbDice;
+		}
+
+		public function getArea($elem)
+		{
+			$this->_Area = $elem;
 		}
 
 		public static function doc()
