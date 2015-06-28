@@ -1,5 +1,6 @@
 <?php
 	include_once("Dice.class.php");
+	include_once("Ship.class.php");
 	$dice = new dice(1);
 ?>
 <html>
@@ -24,6 +25,7 @@
 				margin-left: auto;
 			}
 
+<<<<<<< HEAD
 			#vaisseau 
 			{
 				position:relative;
@@ -64,6 +66,27 @@
 				float:left;
 				width: 50px;
 			}
+=======
+<script>
+
+$Ship = new ship( array('posX' => 34, 'posY' => 20, 'sprite' => "../cruseship.jpg"));
+
+for (var j = 0; j < 100; j++) 
+{
+	document.write("<tr>");
+	for (var i = 0; i < 150; i++) 
+	{
+		if (ship->getPosX == i && ship->getPosY == j)
+		{
+			document.write("<td><img src=\"" + ship->getSprite() + "\"></img></td>");
+		}
+		else
+			document.write("<td></td>");
+  	}
+	document.write("</tr>");
+}
+</script>
+>>>>>>> 2789fefda05b33592899df8ef2e1f8478253e416
 
 			#station
 			{
