@@ -12,29 +12,49 @@ class Ship{
 	private $_flex;
 	private $_shield;
 	private $_weapon;
+	public $verbose =  false;
 	
 	public function __construct(array $kwargs) {
 		if (array_key_exists('name', $kwargs))
 			$this->_name = _setName($kwargs['name']);
+		else
+			$this->_name = "cruseship";
 		if (array_key_exists('X', $kwargs))
 			$this->_sizeX = _setSiseX($kwargs['sizeX']);
+		else
+			$this->_sizeX = 10;
 		if (array_key_exists('Y', $kwargs))
 			$this->_sizeY = _setSiseY($kwargs['sizeY']);
+		else
+			$this->_sizeY = 10;
 		if (array_key_exists('sprite', $kwargs))
 			$this->_sprite = _setSprite($kwargs['sprite']);
+		else
+			$this->_sprite = "plop.png";
 		if (array_key_exists('hull', $kwargs))
 			$this->_hull = _setHull($kwargs['hull']);
+		else
+			$this->_hull = 10; 
 		if (array_key_exists('power', $kwargs))
 			$this->_power = _setPower($kwargs['power']);
+		else
+			$this->_power = 10;
 		if (array_key_exists('speed', $kwargs))
 			$this->_speed = _setSpeed($kwargs['speed']);
+		else
+			$this->_speed = 10;
 		if (array_key_exists('flex', $kwargs))
 			$this->_flex = _setFlex($kwargs['flex']);
+		else
+			$this->_flex = 10;
 		if (array_key_exists('shield', $kwargs))
 			$this->_shield = _setShield($kwargs['shield']);
+		else
+			$this->_shield = 10;
 		if (array_key_exists('weapon', $kwargs))
 			$this->_weapon = _setWeapon($kwargs['weapon']);
-
+		else
+			$this->_weapon = "CANON A NEUTRON";
 		if (self::$verbose == True)
 			printf("Color( name: %s.\nsize : %dx%d\nsprite : %s\nhull : %s\npower : %d\nspeed : %d\nflex : %d\nshield : %d\nweapon : %s\n) constructed.\n"
 				, $this->_name, $this->_sizeX, $this->_sizeY, $this->_sprite, $this->_hull, $this->_power, $this->_speed, $this->_flex, $this->_shield, $this->_weapon->getName());

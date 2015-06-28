@@ -1,3 +1,2 @@
-table	{ border: none; }
 
-td		{border: 1px solid lightgrey; width: 10px; height: 10px;}
+.case	{border: 1px solid #73A0FF; width: 8px; height: 8px; float: left; position: relative; padding: 1px;}
