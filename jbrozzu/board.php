@@ -1,5 +1,6 @@
 <?php
 	include_once("Dice.class.php");
+	include_once("Ship.class.php");
 	$dice = new dice(1);
 ?>
 <html>
@@ -13,23 +14,21 @@
 
 <table>
 
-<script type="text/javascript">
+<script>
 
-var myArray    = new Array();
-    myArray[0] = "1";
-    myArray[1] = "2";
-    myArray[2] = "3";
-    myArray[3] = "4";
-    myArray[4] = "5";
-
-
+$Ship = new ship( array('posX' => 34, 'posY' => 20, 'sprite' => "../cruseship.jpg"));
 
 for (var j = 0; j < 100; j++) 
 {
 	document.write("<tr>");
 	for (var i = 0; i < 150; i++) 
 	{
-		document.write("<td><img src=\"https://avatars3.githubusercontent.com/u/8488828?v=3&s=40\"></img></td>");
+		if (ship->getPosX == i && ship->getPosY == j)
+		{
+			document.write("<td><img src=\"" + ship->getSprite() + "\"></img></td>");
+		}
+		else
+			document.write("<td></td>");
   	}
 	document.write("</tr>");
 }

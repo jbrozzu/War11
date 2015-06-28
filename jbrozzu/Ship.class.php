@@ -5,6 +5,8 @@ class Ship{
 	private $_name;
 	private $_sizeX;
 	private $_sizeY;
+	private $posX;
+	private $posY;
 	private $_sprite;
 	private $_hull;
 	private $_power;
@@ -12,29 +14,56 @@ class Ship{
 	private $_flex;
 	private $_shield;
 	private $_weapon;
+	public $verbose == True;
 	
 	public function __construct(array $kwargs) {
 		if (array_key_exists('name', $kwargs))
 			$this->_name = _setName($kwargs['name']);
+		else
+			$this->_name = "CruseShip";
 		if (array_key_exists('X', $kwargs))
 			$this->_sizeX = _setSiseX($kwargs['sizeX']);
+		else
+			$this->_sizeX = 10;
 		if (array_key_exists('Y', $kwargs))
 			$this->_sizeY = _setSiseY($kwargs['sizeY']);
+		else
+			$this->_sizeY = 10;
+		if (array_key_exists('posX', $kwargs))
+			$this->_posX = _setSiseX($kwargs['posX']);
+		else
+			$this->_posX = 10;
+		if (array_key_exists('posY', $kwargs))
+			$this->_posY = _setSiseY($kwargs['posY']);
+		else
+			$this->_posY = 10;
 		if (array_key_exists('sprite', $kwargs))
 			$this->_sprite = _setSprite($kwargs['sprite']);
+		else
+			$this->_sprite = "plop.jpg";
 		if (array_key_exists('hull', $kwargs))
 			$this->_hull = _setHull($kwargs['hull']);
+		else
+			$this->_hull = 1;
 		if (array_key_exists('power', $kwargs))
 			$this->_power = _setPower($kwargs['power']);
+		else
+			$this->_power = 2;
 		if (array_key_exists('speed', $kwargs))
 			$this->_speed = _setSpeed($kwargs['speed']);
+		else
+			$this->_speed = 2;
 		if (array_key_exists('flex', $kwargs))
 			$this->_flex = _setFlex($kwargs['flex']);
+		else
+			$this->_flex = 2;
 		if (array_key_exists('shield', $kwargs))
 			$this->_shield = _setShield($kwargs['shield']);
+		else
+			$this->_shield = 5;
 		if (array_key_exists('weapon', $kwargs))
 			$this->_weapon = _setWeapon($kwargs['weapon']);
-
+		else $this->_weapon = "plop";
 		if (self::$verbose == True)
 			printf("Color( name: %s.\nsize : %dx%d\nsprite : %s\nhull : %s\npower : %d\nspeed : %d\nflex : %d\nshield : %d\nweapon : %s\n) constructed.\n"
 				, $this->_name, $this->_sizeX, $this->_sizeY, $this->_sprite, $this->_hull, $this->_power, $this->_speed, $this->_flex, $this->_shield, $this->_weapon->getName());
@@ -54,6 +83,16 @@ class Ship{
 		private function _setSiseY($val)
 		{
 			$this->_sizeY = $val;
+		}
+
+		private function _setPosX($val)
+		{
+			$this->_posX = $val;
+		}
+
+		private function _setPosY($val)
+		{
+			$this->_posY = $val;
 		}
 
 		private function _setSprite($val)
@@ -112,6 +151,16 @@ class Ship{
 			return $this->_sprite;
 		}
 
+		public function getPosX()
+		{
+			return $this->_sizeX;
+		}
+
+		public function getPosY()
+		{
+			return $this->_sizeY;
+		}
+
 		public function getHull()
 		{
 			return $this->_hull;
@@ -142,8 +191,11 @@ class Ship{
 			return $this->_weapon;
 		}
 
+		public function print_ship()
+		{
+			echo ;
 
-
+		}
 
 	}
 

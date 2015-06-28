@@ -3,37 +3,58 @@
 	$dice = new dice(1);
 ?>
 <html>
-<head>
-<title>Dat board</title>
-<link rel="stylesheet" type="text/css" href="board.css">
-</head>
+	<head>
+		<title>Dat board</title>
+		<link rel="stylesheet" type="text/css" href="board.css">
+	</head>
 <body>
 
-<h1>TyE boarde.</h1>
+<h1>TyE boafdgkjrde.</h1>
 
-<table>
+	<table>
 
-<script type="text/javascript">
-
-var myArray    = new Array();
-    myArray[0] = "1";
-    myArray[1] = "2";
-    myArray[2] = "3";
-    myArray[3] = "4";
-    myArray[4] = "5";
+	<script type="text/javascript">
 
 
+		<?php
+			include_once("Ship.class.php");
+			$ship = new ship( array('name' => "\"Destructor\"", 'posX' => 54 , 'posY' => 10, 'sprite' => "\"../cruseship.jpg\"", 'hull' => 10, 'power' => 5, 'speed' => 15, 'flex' => 3, 'shield' => '100'));
+		?>
 
-for (var j=0; j<100; j++) {
-	document.write("<tr>");
-	for (var i=0; i<150; i++) {
-		document.write("<td>" + <?php echo $dice->roll(); ?>  + "</td>");
-  	}
-	document.write("</tr>");
-}
-</script>
+		var nlt = "&#013;";
+		var nlh = "<br>";
+		var X = <?php print $ship->getPosX() ; ?> ;
+		var Y = <?php print $ship->getPosY() ; ?> ;
+		var URL = <?php echo $ship->getSprite(); ?> ;
+		var Name = <?php echo $ship->getName(); ?> ;
+		var hull = <?php echo $ship->getHull(); ?> ;
+		var power = <?php echo $ship->getPower(); ?> ;
+		var speed = <?php echo $ship->getSpeed(); ?> ;
+		var flex = <?php echo $ship->getFlex(); ?> ;
+		var shield = <?php echo $ship->getShield(); ?> ;
 
-</table>
+		document.write("name : " + Name + nlh);
+		document.write("hull : " + hull + nlh);
+		document.write("power : " + power + nlh);
+		document.write("speed : " + speed + nlh);
+		document.write("flex : " + flex + nlh);
+		document.write("shield : " + shield + nlh);
+		for (var j=0; j<100; j++) {
+			document.write("<tr>");
+			for (var i=0; i<150; i++) {
+				if ( X == i &&  Y == j)
+				{
+				 	document.write("<td><img src= " + URL + " title =" + Name + "></td>");
+				}
+				 else
+					document.write("<td></td>");
+		  	}
+			document.write("</tr>");
+		}
 
-</body>
+	</script>
+
+	</table>
+
+	</body>
 </html>
